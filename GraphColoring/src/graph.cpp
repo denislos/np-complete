@@ -30,6 +30,7 @@ std::vector<std::size_t> Graph::brute_force_optimal_color() const
             bool is_correct_mapping = true;
 
             auto coordinates = boost::get(coord_t(), adjacency_list);
+            
             for (auto [ei, ei_end] = boost::edges(adjacency_list); ei != ei_end; ++ei)
                 if (colors_mapping[boost::get(coordinates, boost::source(*ei, adjacency_list))] ==
                     colors_mapping[boost::get(coordinates, boost::target(*ei, adjacency_list))])

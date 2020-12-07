@@ -9,8 +9,8 @@ find_package(OpenMP)
 find_package(Boost)
 
 FILE(GLOB SRCS
-    "graph.cpp"
-    "coloring_bench.cpp"
+    "src/graph.cpp"
+    "src/coloring_bench.cpp"
 )
 
 set(EXECUTABLE coloring_bench)
