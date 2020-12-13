@@ -45,10 +45,11 @@ if(MSVC)
 endif()
 
 link_directories(${GraphColoring_LINKER_LIBS})
+link_directories(${CMAKE_CURRENT_LIST_DIR}/../GraphColoring)
 
 add_executable(GraphColoringTests ${GraphColoringTests_sources})
 target_compile_options(GraphColoringTests PRIVATE ${GRAPHCOLORING_CXX_FLAGS} ${GRAPHCOLORING_LINK_FLAGS})
-target_link_libraries(GraphColoringTests ${COLORING_LIB})
+target_link_libraries(GraphColoringTests coloring)
 
 if(NOT WIN32)
   target_link_libraries(GraphColoringTests stdc++fs)
