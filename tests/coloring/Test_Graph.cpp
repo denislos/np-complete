@@ -8,7 +8,7 @@ namespace UT
 TEST(TestGraph, EmptyGraphUnit)
 {
     Graph g;
-    
+
     EXPECT_EQ(g.get_num_vertices(), 0u);
 }
 
@@ -17,7 +17,7 @@ TEST(TestGraph, AddSameEdgeUnit)
     Graph g;
     g.add_edge(0, 1);
     g.add_edge(1, 0);
-    
+
     EXPECT_EQ(g.get_num_vertices(), 2u);
     EXPECT_TRUE(g.has_edge(0, 1));
     EXPECT_TRUE(g.has_edge(1, 0));
@@ -31,7 +31,7 @@ TEST(TestGraph, AddEdgesUnit)
     g.add_edge(0, 3);
     g.add_edge(1, 2);
     g.add_edge(3, 4);
-    
+
     EXPECT_EQ(g.get_num_vertices(), 5u);
     EXPECT_TRUE(g.has_edge(0, 1));
     EXPECT_TRUE(g.has_edge(0, 2));
@@ -78,9 +78,9 @@ TEST(TestGraph, ColoringCommonCenterUnit)
         g.add_edge(i, 0);
     }
     // Closure
-    g.add_edge(0, 7); 
+    g.add_edge(0, 7);
     g.add_edge(1, 7);
-    
+
     EXPECT_EQ(g.get_num_vertices(), 8u);
     EXPECT_EQ(g.brute_force_chromatic_number(), 4u);
     EXPECT_EQ(g.lawler_chromatic_number(), 4u);
