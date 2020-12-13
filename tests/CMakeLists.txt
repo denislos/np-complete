@@ -1,5 +1,6 @@
 set(test_list run_all.cpp
     sat/parser_tests.cpp
+    coloring/Test_Graph.cpp
 )
 
 add_executable(tests ${test_list})

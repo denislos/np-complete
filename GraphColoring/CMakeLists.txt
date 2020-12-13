@@ -27,12 +27,6 @@ target_link_libraries(${COLORING_LIB} PUBLIC ${Boost_LIBRARIES})
 
 set(EXECUTABLE coloring_bench)
 
-add_executable(${EXECUTABLE} ${BENCH_SRCS})
-target_compile_options(${EXECUTABLE} PUBLIC -O3 -Wall -Werror -Wextra)
-target_link_libraries(${EXECUTABLE} PUBLIC benchmark::benchmark ${COLORING_LIB})
-
-option(GRAPHCOLORING_BUILD_TESTS "Configure Tests target" ON)
-
-if(GRAPHCOLORING_BUILD_TESTS)
-  add_subdirectory(src/tests)
-endif()
+add_executable(${EXECUTABLE} ${SRCS})
+target_compile_options(${EXECUTABLE} PUBLIC -O3 -Wall -Werror -Wextra -fcoroutines)
+target_link_libraries(${EXECUTABLE} PUBLIC benchmark::benchmark ${Boost_LIBRARIES})
