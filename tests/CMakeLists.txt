@@ -48,11 +48,7 @@ link_directories(${GraphColoring_LINKER_LIBS})
 link_directories(${CMAKE_CURRENT_LIST_DIR}/../GraphColoring)
 
 add_executable(GraphColoringTests ${GraphColoringTests_sources})
-target_compile_options(GraphColoringTests PRIVATE ${GRAPHCOLORING_CXX_FLAGS} ${GRAPHCOLORING_LINK_FLAGS})
+target_compile_options(GraphColoringTests PRIVATE ${GRAPHCOLORING_CXX_FLAGS} ${GRAPHCOLORING_LINK_FLAGS} -Wno-unused-parameter)
 target_link_libraries(GraphColoringTests coloring)
-
-if(NOT WIN32)
-  target_link_libraries(GraphColoringTests stdc++fs)
-endif()
 
 install(TARGETS GraphColoringTests DESTINATION ${CMAKE_INSTALL_PREFIX})
