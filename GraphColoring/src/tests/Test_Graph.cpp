@@ -47,7 +47,7 @@ TEST(TestGraph, BruteForceColoringTwoColorUnit)
     g.add_edge(0, 1);
     g.add_edge(0, 2);
 
-    std::size_t colors = g.brute_force_chromatic_number();
+    [[maybe_unused]]std::size_t colors = g.brute_force_chromatic_number();
 }
 
 }

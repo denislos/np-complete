@@ -47,6 +47,7 @@ link_directories(${GraphColoring_LINKER_LIBS})
 
 add_executable(GraphColoringTests ${GraphColoringTests_sources})
 target_compile_options(GraphColoringTests PRIVATE ${GRAPHCOLORING_CXX_FLAGS} ${GRAPHCOLORING_LINK_FLAGS})
+target_link_libraries(GraphColoringTests ${COLORING_LIB})
 
 if(NOT WIN32)
   target_link_libraries(GraphColoringTests stdc++fs)
